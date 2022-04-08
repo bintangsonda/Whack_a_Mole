@@ -1,0 +1,73 @@
+h1, h2{
+	font-size: 60px;
+	text-align:center;
+	font-family: arial;
+	margin:10px;
+}
+@font-face {
+	/*ini supaya tulisan whack a mole nya beda*/
+	font-family: "mantap";
+	src :url('SF_Slapstick_Comic.ttf') format('truetype');
+}
+h1{
+	font-family: "mantap", cursive;
+}
+button{
+	display: block;
+	margin:auto;
+	width:400px;
+	height: 100px;
+	color:orange;
+	font-size: 50px;
+
+}
+.container {
+	width:800px;
+	margin:auto;
+	cursor:url(gambar/palus.png), auto;
+	
+}
+.container:active {
+cursor:url(gambar/palus3.png), auto;
+}
+.tanah {
+	width:200px;
+	height:200px;
+	position: relative;
+	overflow: hidden;
+	top:3px;
+	float:left;
+}
+/*elemen baru tpi masi nempel ke elemen tanah*/
+/*tanah: after biar nnati klo dikasih overflow di .tanah tar tikus nya bisa ilang*/
+.tanah:after{
+content:'';
+display: block;
+width:200px;
+height:100px;
+background:url(gambar/tanahpin.png) bottom center no-repeat;
+background-size:100%;
+position :absolute;
+bottom:-17px;
+
+}
+.mouse{
+	width:100%;
+	height: 100%;
+	background:url(gambar/mouse123.png) bottom center no-repeat;
+	background-size: 90%; 
+	position:absolute;
+	top:200px;/*ini buat ngumpet*/
+	transition: top 0.3s;
+}
+/*jadi kalo di show up tikus yg dibwah tanah akan kembali ke posisi awal, ditambah 20 px keatas dan dikasi transisi biar keliatannya keluar*/
+.tanah.showup .mouse{
+	top:-20px;
+}
+body{
+	background-color: yellow;
+}
+p{
+	font-size: 40px;
+}
+
